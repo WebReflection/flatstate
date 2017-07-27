@@ -1,0 +1,36 @@
+{
+  "name": "flatstate",
+  "version": "0.1.0",
+  "description": "Prototypal inheritance applied to flat states.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run minify && npm test && npm run size",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "minify": "uglifyjs index.js --comments=/^!/ --compress --mangle -o min.js",
+    "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c min.js | wc -c",
+    "test": "istanbul cover test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/flatstate.git"
+  },
+  "keywords": [
+    "state",
+    "inheritance",
+    "prototypal",
+    "fast",
+    "flat"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebReflection/flatstate/issues"
+  },
+  "homepage": "https://github.com/WebReflection/flatstate#readme",
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
+    "tressa": "^0.3.1",
+    "uglify-es": "^3.0.26"
+  }
+}
